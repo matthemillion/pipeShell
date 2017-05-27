@@ -1,0 +1,39 @@
+Design of pipeShell
+
+
+
+main
+
+	declare constants & variables
+
+	while user input is not "exit" or "quit"
+		
+		count arguments in each argument set based on "|" and " "
+
+		if argument set is 1
+
+			fork one child and execute
+
+			have parent wait for child to finish
+
+		if argument sets are greater than 1
+
+			call function for at least one pipe
+
+
+
+function for at least one pipe
+
+	create appropriate number of pipes
+
+	fork a first child for first argument
+
+		close unused ends of pipes, dup and execute argument
+
+	fork middle children if necessary
+
+		close unused ends of pipes, dup and execute argument
+
+	fork a last child for last argument
+		
+		close unused ends of pipes, dup and execute argument
